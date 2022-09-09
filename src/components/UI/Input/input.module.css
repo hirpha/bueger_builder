@@ -1,0 +1,24 @@
+.Input{
+    width: 100%;
+    
+
+}
+
+.InputElement{
+    width: 80%;
+    margin: 10px;
+    box-shadow: 0 2px 2px #ccc;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.InputElement:focus,
+.InputElement:hover
+{
+    outline: none;
+    
+    box-sizing: border-box;
+    border: none;
+    background-color: #ccc;
+}

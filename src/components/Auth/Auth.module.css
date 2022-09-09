@@ -1,0 +1,12 @@
+.Auth { 
+    width: 50%;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.Auth p{
+    text-align: left;
+    margin-top: 0px;
+    width: 80%;
+    margin-left: 60px;
+}
