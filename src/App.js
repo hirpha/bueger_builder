@@ -14,7 +14,6 @@ import * as actionTypes from "./store/actions/index"
 import { useEffect } from 'react';
 
 function App(props) {
-  console.log(props)
 
   useEffect(()=>{
     props.onAutoLogin()

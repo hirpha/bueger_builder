@@ -28,10 +28,10 @@ const submitAuthHandler = (event) =>  {
     event.preventDefault()
     if(emailToched || passwordTouched){
 
-        if(email.trim().length == 0){
+        if(email.trim().length === 0){
             setEmailError("Email field must be filled")
         }
-        if(password.trim().length == 0){
+        if(password.trim().length === 0){
            setPasswordError("Email field must be filled")
         } 
         if(password.length < 8) {
@@ -52,7 +52,6 @@ const submitAuthHandler = (event) =>  {
                 redirect = <Navigate to="/checkout" replace />
             
             } else{
-                console.log(props.orderPurchase)
                 navigate ('/')
             }
         }
@@ -65,10 +64,10 @@ const submitAuthHandler = (event) =>  {
 
 const onchangeHandler = (index, event) => {
 
-    if(index ==0){
+    if(index ===0){
         setEmail(event.target.value)
         setEmailTouched(true)
-    } else if(index == 1){
+    } else if(index === 1){
         setPassword(event.target.value)
         setPasswordTouched(true)
     }

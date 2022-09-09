@@ -13,7 +13,6 @@ const Layout = (props) => {
    }
 
    const showSideDrawerHandler =() =>{
-      console.log(showSideDrawer)
       setShowSideDrawer(!showSideDrawer)
    }
 

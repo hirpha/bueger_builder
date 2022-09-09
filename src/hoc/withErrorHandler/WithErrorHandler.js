@@ -28,7 +28,6 @@ const WithErrorHandler = (WrapperComponent, axios) => {
     }
     
     render (){
-        // console.log(this.props.error)
         return   (
             <Auxilary>
                 <Modal show = {this.state.error} showModal = {this.closeModal} >

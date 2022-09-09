@@ -16,7 +16,7 @@ const orderReducer = (state = initialState, action) =>{
             }
         case actionType.PURCHSE_BURGER_SECCUSS:
             const orderData = {
-                ... action.orderData,
+                ...action.orderData,
                 id:action.id
             }
             return {

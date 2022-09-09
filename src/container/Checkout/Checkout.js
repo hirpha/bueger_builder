@@ -1,15 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Navigate, Route, Routes, useLocation, useMatch, useNavigate } from 'react-router'
+import { Navigate, useLocation, useNavigate } from 'react-router'
 import CheckoutSummary from '../../components/CheckoutSummary/CheckoutSummary'
-import ContactData from './ContactData/ContactData'
 
 const Checkout = (props) => {
    
     const location = useLocation()
-    // const match = useMatch()
-    // console.log(match)
-    console.log(location.pathname)
     const navigate = useNavigate()
 
     const checkoutCancelHandler = () =>{
@@ -23,7 +19,6 @@ const Checkout = (props) => {
     }
 
   let summary =   <Navigate to = "/"/>
-  console.log(props.ing)
 
 if(props.ing != null){
   summary = <div>

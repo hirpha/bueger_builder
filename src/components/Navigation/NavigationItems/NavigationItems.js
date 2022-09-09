@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import NavigationItem from './NavigationItem/NavigationItem'
 import Styles from './NavigationItems.module.css'
 
-import * as actionType from "../../../store/actions/index"
 
 const NavigationItems = (props) => {
 

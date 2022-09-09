@@ -42,7 +42,6 @@ export const authenticate = (email, password, isSignup) => {
             password:password,
             returnSecureToken:true
         }
-        console.log(isSignup)
         let url = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyA7JsIYRdsTqDPiP4GorEUuKW9z7pg7v9M"
         if(!isSignup){
             url ="https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyA7JsIYRdsTqDPiP4GorEUuKW9z7pg7v9M"
@@ -50,7 +49,6 @@ export const authenticate = (email, password, isSignup) => {
         dispatch(authStart())
         axios.post(url, authData)
         .then(response => {
-            console.log(response.data)
 
             localStorage.setItem("token",response.data.idToken )
             localStorage.setItem("expiresIn",new Date(new Date().getTime() + response.data.expiresIn * 1000))
@@ -59,7 +57,6 @@ export const authenticate = (email, password, isSignup) => {
             dispatch(authSuccess(response.data.idToken,response.data.localId))
             dispatch(checkAuthTimeout(response.data.expiresIn))
         }).catch(error =>{
-            console.log(error.response.data.error.message)
             dispatch(authFail(error.response.data.error.message))
         })
     }
@@ -80,10 +77,8 @@ export const authCheckState = () =>{
 
                 const expiresIn = localStorage.getItem("expiresIn")
                 if(new Date(expiresIn) > new Date()){
-                console.log("here")
                     
                     const localId = localStorage.getItem("localId")
-                    console.log(localId)
                     dispatch(authSuccess(token, localId))
                     dispatch(checkAuthTimeout(((new Date(expiresIn).getTime() - new Date().getTime())/ 1000)))
                 } else {

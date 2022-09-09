@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Order from '../../components/Order/Order'
 import axios from '../../axios-order'
 import Spinner from '../../components/UI/Spinner/Spinner'
@@ -9,28 +9,24 @@ import WithErrorHandler from '../../hoc/withErrorHandler/WithErrorHandler'
 const Orders = (props) => {
 
     useEffect(()=>{
-        console.log(props.token)
         props.onFetchOrder(props.token, props.userId)
-    },[])
+    },[props])
 
 let order = <p>There is no data found</p>
-console.log(props.orders)
 if(props.orders){
    order =  props.orders.map((order, index) => {
-        console.log(order)
         return <Order ingridients = {order.ingridients} price = {order.price}  key = {index}/>
     })
  
     
 }
-if (props.orders.length == 0) {
+if (props.orders.length === 0) {
     order = <p>There is no data found</p>
 }
 if(props.loading){
     order = <Spinner/>
 }
 
-console.log(props.orders)
   return (
     <div>
         {order}

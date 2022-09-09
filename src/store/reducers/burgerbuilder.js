@@ -29,7 +29,6 @@ const burgerBuilderReducer = (state = ingrident, action) =>{
                 // ingridients:action.ingridients,
                 error:false
             }
-            console.log(updatedState)
             return updatedState
         case actionTypes.FECHING_INGRIDIENTS_FAIL:
             return {
@@ -52,7 +51,6 @@ const burgerBuilderReducer = (state = ingrident, action) =>{
                 price:state.price + INGRIDIENT_PRICES[action.ingridientName]
             }
         case actionTypes.REMOVEINGRIDIENT:
-            console.log(action.ingridientName)
             return {
                     ...state,
                     ingridients:{

@@ -1,7 +1,6 @@
 import React from 'react'
 import Auxilary from '../../../hoc/Auxilary'
 import Button from '../../UI/Button/Button'
-import {NavLink} from 'react-router-dom'
 
 
 const CheckSummary = (props) => {

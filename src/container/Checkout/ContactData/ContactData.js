@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useLocation, useNavigate } from 'react-router'
+import {  useNavigate } from 'react-router'
 import Button from '../../../components/UI/Button/Button'
 import classes from './ContactData.module.css'
 import axios from '../../../axios-order'
@@ -73,7 +73,6 @@ const ContactData = (props) => {
     }
 
 
-    const location = useLocation()
     const navigate= useNavigate()
 
     const orderHandler = (event) =>{
@@ -101,7 +100,6 @@ const ContactData = (props) => {
     }
 
     const onchangeHandler = (event, identifier) =>{
-      console.log(identifier)
       switch(identifier){
         case "name":
           setName(event.target.value)
@@ -122,7 +120,6 @@ const ContactData = (props) => {
           setDeliveryMethod(event.target.value)
           break
           default:
-            console.log("null")
             break
 
       }

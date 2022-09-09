@@ -8,7 +8,7 @@ import Auxilary from '../../hoc/Auxilary'
 import axios from "../../axios-order"
 import Spinner from '../../components/UI/Spinner/Spinner'
 import WithErrorHandler from '../../hoc/withErrorHandler/WithErrorHandler'
-import { Navigate, useNavigate } from 'react-router'
+import {  useNavigate } from 'react-router'
 import { connect } from 'react-redux'
 import * as actionsType from '../../store/actions/index' 
 
@@ -16,14 +16,13 @@ import * as actionsType from '../../store/actions/index'
 const BurgerBuilder = (props) => {
 
   const [showModal, setShowModal] = useState(false)
-  const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
 
   // useEffeect 
   useEffect(()=>{
     props.onInitIngridient()
     props.setPrice()
-  },[])
+  },[props])
 
   
 ////////////////////////
@@ -79,9 +78,7 @@ const showModalHandler = () => {
 </CheckSummary>
   }
    
-if(loading){
-  orderSummary = <Spinner/>
-}
+
   return (
     <Auxilary>
       
