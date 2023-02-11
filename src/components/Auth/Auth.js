@@ -45,11 +45,11 @@ const submitAuthHandler = (event) =>  {
             setPasswordError("")
             props.onAuthenticate(email, password, isSignup)
             if(props.orderPurchase){
-                navigate("/", {
-                    replace:true
-                })
+                // navigate("/checkout", {
+                //     replace:true
+                // })
 
-                redirect = <Navigate to="/checkout" replace />
+                redirect = <Navigate to="/checkout"  />
             
             } else{
                 navigate ('/')

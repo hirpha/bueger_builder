@@ -10,7 +10,7 @@ const Orders = (props) => {
 
     useEffect(()=>{
         props.onFetchOrder(props.token, props.userId)
-    },[props])
+    },[])
 
 let order = <p>There is no data found</p>
 if(props.orders){

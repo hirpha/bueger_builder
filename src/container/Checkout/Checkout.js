@@ -14,7 +14,6 @@ const Checkout = (props) => {
     const checkoutContinueHandler = () =>{
       navigate(location.pathname +"/contact-data", {
         replace:true, 
-        state:props.ing
       })
     }
 

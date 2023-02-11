@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {  useNavigate } from 'react-router'
+import {  Navigate, useNavigate } from 'react-router'
 import Button from '../../../components/UI/Button/Button'
 import classes from './ContactData.module.css'
 import axios from '../../../axios-order'
@@ -149,7 +149,7 @@ const ContactData = (props) => {
       form = <Spinner/>
     }
     if(props.purchased){
-      navigate("/")
+      form = <Navigate to = "/"/>
     }
 
 

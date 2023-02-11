@@ -22,7 +22,7 @@ const BurgerBuilder = (props) => {
   useEffect(()=>{
     props.onInitIngridient()
     props.setPrice()
-  },[props])
+  },[])
 
   
 ////////////////////////
